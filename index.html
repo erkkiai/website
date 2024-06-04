@@ -55,6 +55,21 @@
             main, footer {
                 font-size: 1.5em;
             }
+            header, footer {
+              display: flex;
+              flex-direction: column;
+            }
+            main, footer {
+              margin-top: 1.5em;
+            }
+            header .slogan {
+              margin-top: 0.25em;
+              font-size: 1.5em;
+            }
+            footer .powered-by {
+              margin-top: 0.25em;
+              font-size: 0.75em;
+            }
         </style>
 
         <!-- Link: Preconnect & DNS Prefetch & Preload -->
@@ -71,13 +86,14 @@
     <body>
         <header>
             <h1>ErkkiAI™</h1>
+            <span class="slogan">Energiatehokkuutta kiinteistöllesi</span>
         </header>
         <main>
             <a href="https://new.ultrahack.org/hackathons/metaversenergy-hackathon">See You Soon! 👀</a>
         </main>
         <footer>
             <a href="https://erkkiai.com">©2024 <span title="Christer Warén & Tomi Jokinen">ErkkiAI™</span></a>
-            <a href="https://waren.io">Powered by War&eacute;n Group</a>
+            <a class="powered-by" href="https://waren.io">Powered by War&eacute;n Group</a>
         </footer>
     </body>
 </html>
