@@ -1,0 +1,5 @@
+ServerSignature off
+
+#Deny displaying directory tree
+IndexIgnore */*
+Options -Indexes
