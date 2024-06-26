@@ -49,17 +49,28 @@
                 overflow: hidden;
                 overflow-y: auto;
             }
-            main, footer {
+            main {
                 font-size: 1.5rem;
             }
             header, section {
                 width: 100vw;
                 height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                overflow-y: auto;
             }
-            header {
+            header, header .branding, .contact div {
+                display: flex;
+                flex-direction: column;
+            }
+            header .box {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                justify-content: center;
             }
             header .logo {
                 max-height: 75vmin;
@@ -72,36 +83,74 @@
             header .slogan {
                 font-size: 3rem;
             }
-            footer {
+            header .credits {
                 display: flex;
                 flex-direction: column;
                 text-align: center;
+                font-size: 1.5rem;
             }
-            footer .powered-by {
+            header .credits .powered-by {
                 margin-top: 0.25em;
                 font-size: 1rem;
             }
-
-            .contact h2 {
-                font-size: 5rem;
+            section#contact .peoples {
+                display: flex;
+                flex-direction: row;
             }
-
-            .contact div {
+            section#contact .people {
                 display: flex;
                 flex-direction: column;
             }
-
-            .contact img {
-                border-radius: 50;
-                height: 50vmin;
+            section#contact .people:nth-child(1) {
+                margin-right: 5vh;
+            }
+            section#personalization h2, section#looking h2 {
+                margin-top: 2vh;
+            }
+            section#features h2 {
+                margin-bottom: 5vh;
+            }
+            section#contact h2 {
+                margin-bottom: 2vh;
+            }
+            section#contact .links {
+                font-size: 2rem;
+            }
+            section#personalization img, section#looking img, section#contact img {
+                border-radius: 5vh;
+                height: 25vh;
             }
 
-            .button {
-                margin-top: 10%;
+            section#contact img {
+                margin-bottom: 2vh;
+            }
+            .arrow {
+                margin-top: 3vh;
+                font-size: 3rem;
+                opacity: 75%;
+            }
+            .list {
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+            }
+            .list i {
+                font-size: 5rem;
+                margin-bottom: 2vh;
+            }
+            .list .feature {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                margin-left: 5vh;
+            }
+
+            .list .feature:nth-child(1) {
+                margin-left: 0;
             }
 
             @media (orientation: portrait) {
-                header {
+                header .box {
                     flex-direction: column;
                     text-align: center;
                     justify-content: center;
@@ -114,10 +163,14 @@
                 header .slogan {
                     font-size: 1.5rem;
                 }
-
+                header .credits {
+                    margin-top: 3vh;
+                }
                 .contact .persons {
-                    display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
+                }
+                .arrow {
+                    margin-top: 6vh;
                 }
             }
         </style>
@@ -136,43 +189,67 @@
     <body>
         <div class="website">
             <header>
-                <img class="logo" src="assets/images/logo.svg" alt="ErkkiAI™">
-                <div class="branding">
-                    <h1 class="name">ErkkiAI™</h1>
-                    <span class="slogan">Energiatehokkuutta kiinteistöllesi</span>
-                    <a class="button" href="#features"><i class="fa-solid fa-chevron-down"></i></a>
+                <div class="box">
+                    <img class="logo" src="assets/images/logo.svg" alt="ErkkiAI™">
+                    <div class="branding">
+                        <h1 class="name">ErkkiAI™</h1>
+                        <span class="slogan">Energy efficiency for your property</span>
+                    </div>
                 </div>
+                <!--<div class="credits">
+                    <a href="https://erkkiai.com">©2024 <span title="Christer Warén & Tomi Jokinen">ErkkiAI™</span></a>
+                    <a class="powered-by" href="https://waren.io">Powered by War&eacute;n Group</a>
+                </div>
+                <i class="arrow fa-solid fa-chevron-down"></i>-->
             </header>
             <main>
+                <section id="personalization">
+                    <img src="assets/images/42qj-q2us-avtm-xm94.webp" alt="Customized Erkki (Generated by Microsoft Designer)">
+                    <h2>Personalize your Erkki!</h2>
+                </section>
                 <section id="features">
-
+                    <h2>Features</h2>
+                    <div class="list">
+                        <div class="feature">
+                            <i class="fa-solid fa-comments"></i>
+                            <span class="name">Conversations</span>
+                            <span class="description">Manage property with ease!</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-gavel"></i>
+                            <span class="name">Decisions</span>
+                            <span class="description">Make decisions with AI suggestions!</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-regular fa-circle-question"></i>
+                            <span class="name">Questions</span>
+                            <span class="description">Improve AI with answers!</span>
+                        </div>
+                    </div>
                 </section>
                 <section id="looking">
-
+                    <img src="assets/images/e2p7-nbv5-n8y8-getn.jpg" alt="Together Stronger (Generated by Microsoft Designer)">
+                    <h2>We're looking for funding!</h2>
                 </section>
                 <section id="contact">
                     <h2>Let's improve your property together!</h2>
-                    <div class="persons">
-                        <div class="person">
-                            <img src="assets/images/person/cwchristerw.png" alt="Christer Warén">
+                    <div class="peoples">
+                        <div class="people">
+                            <img src="assets/images/people/cwchristerw.png" alt="Christer Warén">
                             <span class="name">Christer Warén</span>
                             <span class="number">+358458420860</span>
-                            <div class="links"><a href="https://christerwaren.fi"><i class="fa-solid fa-globe"></i></a> <a href=""><i class="fa-brands fa-linkedin"></i></a> <a href=""><i class="fa-brands fa-github"></i></a></div>
+                            <div class="links"><a href="https://christerwaren.fi"><i class="fa-solid fa-globe"></i></a> <a href="https://linkedin.com/in/cwchristerw"><i class="fa-brands fa-linkedin"></i></a> <a href="https://github.com/cwchristerw"><i class="fa-brands fa-github"></i></a></div>
                         </div>
 
-                        <div class="person">
-                            <img src="assets/images/person/psyko85.png" alt="Tomi Jokinen">
+                        <div class="people">
+                            <img src="assets/images/people/psyko85.png" alt="Tomi Jokinen">
                             <span class="name">Tomi Jokinen</span>
                             <span class="number">+358 40 068 2462</span>
-                            <div class="links"><a href="https://erkkiai.com"><i class="fa-solid fa-globe"></i></a> <a href=""><i class="fa-brands fa-linkedin"></i></a> <a href=""><i class="fa-brands fa-github"></i></a></div>
+                            <div class="links"><a href="https://erkkiai.com"><i class="fa-solid fa-globe"></i></a> <a href="https://linkedin.com/in/tomi-jokinen-a10a8739"><i class="fa-brands fa-linkedin"></i></a> <a href="https://github.com/psyko85"><i class="fa-brands fa-github"></i></a></div>
                         </div>
                     </div>
                 </section>
             </main>
-            <footer>
-                <a href="https://erkkiai.com">©2024 <span title="Christer Warén & Tomi Jokinen">ErkkiAI™</span></a>
-                <a class="powered-by" href="https://waren.io">Powered by War&eacute;n Group</a>
-            </footer>
         </div>
     </body>
 </html>
