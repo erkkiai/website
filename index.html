@@ -27,8 +27,8 @@
                 flex-direction: column;
                 background-image: linear-gradient(#0049c8, #00bef9);
                 margin: 0;
-                min-width: 320px;
-                min-height: 600px;
+                width: 100vw;
+                height: 100vh;
             }
             * {
                 font-family: "Roboto Medium", sans-serif;
@@ -40,46 +40,85 @@
             .emoji *, .emoji *:active, .emoji *:focus, .emoji *:hover, .emoji *:visited, .emoji *:link {
                 font-family: initial;
             }
-            h1 {
+            h1, h2, h3 {
                 font-family: "Orbitron Bold", sans-serif;
-                font-size: 3em;
                 margin-top: 0;
                 margin-bottom: 0;
             }
+            .website {
+                overflow: hidden;
+                overflow-y: auto;
+            }
             main, footer {
                 font-size: 1.5rem;
             }
-            main, footer {
-                margin-top: 1.5rem;
+            header, section {
+                width: 100vw;
+                height: 100vh;
             }
             header {
-                background-color: #111111;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                height: 5vh;
-                max-height: 100px;
-                min-height: 60px;
             }
             header .logo {
-                max-height: 100%;
+                max-height: 75vmin;
             }
             header .name {
-                font-size: 1.5rem;
-                margin-left: -0.05rem;
-                margin-bottom: -0.5rem;
+                font-size: 7.5rem;
+                margin-bottom: -2rem;
+                margin-left: -0.2rem;
             }
             header .slogan {
-                margin-top: 0.05rem;
-                font-size: 0.75rem;
+                font-size: 3rem;
             }
             footer {
                 display: flex;
                 flex-direction: column;
+                text-align: center;
             }
             footer .powered-by {
                 margin-top: 0.25em;
-                font-size: 0.75em;
+                font-size: 1rem;
+            }
+
+            .contact h2 {
+                font-size: 5rem;
+            }
+
+            .contact div {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact img {
+                border-radius: 50;
+                height: 50vmin;
+            }
+
+            .button {
+                margin-top: 10%;
+            }
+
+            @media (orientation: portrait) {
+                header {
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: center;
+                }
+                header .name {
+                    font-size: 3rem;
+                    margin-bottom: -0.5rem;
+                    margin-left: -0.2rem;
+                }
+                header .slogan {
+                    font-size: 1.5rem;
+                }
+
+                .contact .persons {
+                    display: flex;
+                    flex-direction: row;
+                }
             }
         </style>
 
@@ -95,19 +134,45 @@
     </head>
 
     <body>
-        <header>
-            <img class="logo" src="assets/images/logo.svg" alt="ErkkiAI™">
-            <div class="branding">
-                <h1 class="name">ErkkiAI™</h1>
-                <span class="slogan">Energiatehokkuutta kiinteistöllesi</span>
-            </div>
-        </header>
-        <main>
-            <a href="https://new.ultrahack.org/hackathons/metaversenergy-hackathon">See You Soon! 👀</a>
-        </main>
-        <footer>
-            <a href="https://erkkiai.com">©2024 <span title="Christer Warén & Tomi Jokinen">ErkkiAI™</span></a>
-            <a class="powered-by" href="https://waren.io">Powered by War&eacute;n Group</a>
-        </footer>
+        <div class="website">
+            <header>
+                <img class="logo" src="assets/images/logo.svg" alt="ErkkiAI™">
+                <div class="branding">
+                    <h1 class="name">ErkkiAI™</h1>
+                    <span class="slogan">Energiatehokkuutta kiinteistöllesi</span>
+                    <a class="button" href="#features"><i class="fa-solid fa-chevron-down"></i></a>
+                </div>
+            </header>
+            <main>
+                <section id="features">
+
+                </section>
+                <section id="looking">
+
+                </section>
+                <section id="contact">
+                    <h2>Let's improve your property together!</h2>
+                    <div class="persons">
+                        <div class="person">
+                            <img src="assets/images/person/cwchristerw.png" alt="Christer Warén">
+                            <span class="name">Christer Warén</span>
+                            <span class="number">+358458420860</span>
+                            <div class="links"><a href="https://christerwaren.fi"><i class="fa-solid fa-globe"></i></a> <a href=""><i class="fa-brands fa-linkedin"></i></a> <a href=""><i class="fa-brands fa-github"></i></a></div>
+                        </div>
+
+                        <div class="person">
+                            <img src="assets/images/person/psyko85.png" alt="Tomi Jokinen">
+                            <span class="name">Tomi Jokinen</span>
+                            <span class="number">+358 40 068 2462</span>
+                            <div class="links"><a href="https://erkkiai.com"><i class="fa-solid fa-globe"></i></a> <a href=""><i class="fa-brands fa-linkedin"></i></a> <a href=""><i class="fa-brands fa-github"></i></a></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <a href="https://erkkiai.com">©2024 <span title="Christer Warén & Tomi Jokinen">ErkkiAI™</span></a>
+                <a class="powered-by" href="https://waren.io">Powered by War&eacute;n Group</a>
+            </footer>
+        </div>
     </body>
 </html>
