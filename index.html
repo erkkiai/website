@@ -29,6 +29,7 @@
                 margin: 0;
                 width: 100vw;
                 height: 100vh;
+                text-align: center;
             }
             * {
                 font-family: "Roboto Medium", sans-serif;
@@ -59,8 +60,8 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                overflow: hidden;
-                overflow-y: auto;
+                padding-top: 10vh;
+                padding-bottom: 10vh;
             }
             header, header .branding, .contact div {
                 display: flex;
@@ -79,6 +80,7 @@
                 font-size: 7.5rem;
                 margin-bottom: -2rem;
                 margin-left: -0.2rem;
+                text-align: left;
             }
             header .slogan {
                 font-size: 3rem;
@@ -86,7 +88,6 @@
             header .credits {
                 display: flex;
                 flex-direction: column;
-                text-align: center;
                 font-size: 1.5rem;
             }
             header .credits .powered-by {
@@ -104,23 +105,19 @@
             section#contact .people:nth-child(1) {
                 margin-right: 5vh;
             }
-            section#personalization h2, section#looking h2 {
+            section#personalize h2, section#looking h2 {
                 margin-top: 2vh;
             }
-            section#features h2 {
+            section#features h2, section#contact h2 {
                 margin-bottom: 5vh;
-            }
-            section#contact h2 {
-                margin-bottom: 2vh;
             }
             section#contact .links {
                 font-size: 2rem;
             }
-            section#personalization img, section#looking img, section#contact img {
+            section#personalize img, section#looking img, section#contact img {
                 border-radius: 5vh;
                 height: 25vh;
             }
-
             section#contact img {
                 margin-bottom: 2vh;
             }
@@ -132,7 +129,6 @@
             .list {
                 display: flex;
                 flex-direction: row;
-                text-align: center;
             }
             .list i {
                 font-size: 5rem;
@@ -141,10 +137,8 @@
             .list .feature {
                 display: flex;
                 flex-direction: column;
-                text-align: center;
                 margin-left: 5vh;
             }
-
             .list .feature:nth-child(1) {
                 margin-left: 0;
             }
@@ -152,13 +146,13 @@
             @media (orientation: portrait) {
                 header .box {
                     flex-direction: column;
-                    text-align: center;
                     justify-content: center;
                 }
                 header .name {
                     font-size: 3rem;
                     margin-bottom: -0.5rem;
                     margin-left: -0.2rem;
+                    text-align: center;
                 }
                 header .slogan {
                     font-size: 1.5rem;
@@ -166,11 +160,25 @@
                 header .credits {
                     margin-top: 3vh;
                 }
-                .contact .persons {
+                section#contact .peoples {
                     flex-direction: column;
+                }
+                section#contact .people:nth-child(1) {
+                    margin-right: 0;
+                    margin-bottom: 5vh;
                 }
                 .arrow {
                     margin-top: 6vh;
+                }
+                .list {
+                    flex-direction: column;
+                }
+                .list .feature {
+                    margin-left: 0;
+                    margin-top: 5vh;
+                }
+                .list .feature:nth-child(1) {
+                    margin-top: 0;
                 }
             }
         </style>
@@ -188,7 +196,7 @@
 
     <body>
         <div class="website">
-            <header>
+            <header id="intro">
                 <div class="box">
                     <img class="logo" src="assets/images/logo.svg" alt="ErkkiAI™">
                     <div class="branding">
@@ -196,16 +204,17 @@
                         <span class="slogan">Energy efficiency for your property</span>
                     </div>
                 </div>
-                <!--<div class="credits">
+                <div class="credits">
                     <a href="https://erkkiai.com">©2024 <span title="Christer Warén & Tomi Jokinen">ErkkiAI™</span></a>
                     <a class="powered-by" href="https://waren.io">Powered by War&eacute;n Group</a>
                 </div>
-                <i class="arrow fa-solid fa-chevron-down"></i>-->
+                <a class="arrow" href="#personalize" rel="nofollow"><i class="fa-solid fa-chevron-down"></i></a>
             </header>
             <main>
-                <section id="personalization">
+                <section id="personalize">
                     <img src="assets/images/42qj-q2us-avtm-xm94.webp" alt="Customized Erkki (Generated by Microsoft Designer)">
                     <h2>Personalize your Erkki!</h2>
+                    <a class="arrow" href="#features" rel="nofollow"><i class="fa-solid fa-chevron-down"></i></a>
                 </section>
                 <section id="features">
                     <h2>Features</h2>
@@ -226,10 +235,12 @@
                             <span class="description">Improve AI with answers!</span>
                         </div>
                     </div>
+                    <a class="arrow" href="#looking" rel="nofollow"><i class="fa-solid fa-chevron-down"></i></a>
                 </section>
                 <section id="looking">
                     <img src="assets/images/e2p7-nbv5-n8y8-getn.jpg" alt="Together Stronger (Generated by Microsoft Designer)">
                     <h2>We're looking for funding!</h2>
+                    <a class="arrow" href="#contact" rel="nofollow"><i class="fa-solid fa-chevron-down"></i></a>
                 </section>
                 <section id="contact">
                     <h2>Let's improve your property together!</h2>
@@ -237,17 +248,25 @@
                         <div class="people">
                             <img src="assets/images/people/cwchristerw.png" alt="Christer Warén">
                             <span class="name">Christer Warén</span>
-                            <span class="number">+358458420860</span>
-                            <div class="links"><a href="https://christerwaren.fi"><i class="fa-solid fa-globe"></i></a> <a href="https://linkedin.com/in/cwchristerw"><i class="fa-brands fa-linkedin"></i></a> <a href="https://github.com/cwchristerw"><i class="fa-brands fa-github"></i></a></div>
+                            <span class="number">+358 45 842 0860</span>
+                            <div class="links">
+                                <a href="https://christerwaren.fi"><i class="fa-solid fa-globe"></i></a>
+                                <a href="https://linkedin.com/in/cwchristerw"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="https://github.com/cwchristerw"><i class="fa-brands fa-github"></i></a>
+                            </div>
                         </div>
-
                         <div class="people">
                             <img src="assets/images/people/psyko85.png" alt="Tomi Jokinen">
                             <span class="name">Tomi Jokinen</span>
                             <span class="number">+358 40 068 2462</span>
-                            <div class="links"><a href="https://erkkiai.com"><i class="fa-solid fa-globe"></i></a> <a href="https://linkedin.com/in/tomi-jokinen-a10a8739"><i class="fa-brands fa-linkedin"></i></a> <a href="https://github.com/psyko85"><i class="fa-brands fa-github"></i></a></div>
+                            <div class="links">
+                                <a href="https://erkkiai.com"><i class="fa-solid fa-globe"></i></a>
+                                <a href="https://linkedin.com/in/tomi-jokinen-a10a8739"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="https://github.com/psyko85"><i class="fa-brands fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
+                    <a class="arrow" href="#intro" rel="nofollow"><i class="fa-solid fa-chevron-down"></i></a>
                 </section>
             </main>
         </div>
